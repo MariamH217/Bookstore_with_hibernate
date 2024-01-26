@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <!-- Database connection settings -->
+    <session-factory>
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">password1234</property>
+        <property name="hbm2ddl.auto">none</property>
+
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Specify dialect and show SQL in logs -->
+        <property name="hibernate.show_sql">true</property>
+
+        <mapping class="Book"/>
+        <mapping class="Customer"/>
+        <mapping class="Sale"/>
+
+    </session-factory>
+
+</hibernate-configuration>
